@@ -26,7 +26,7 @@
 import math
 import fractions
 
-def mixed_frac_inch(param, design):
+def mixed_frac_inch(param, design, unit = True):
     if param.unit == '':
         # Unit-less
         inch_value = param.value
@@ -55,7 +55,9 @@ def mixed_frac_inch(param, design):
         value += str(int_part)
     else:
         value += f'{int_part} {fractional_part}'
-    value += '"'
+
+    if unit:
+        value += '"'
 
     # Build the mixed fraction ("(-)1 3/4")
     return value

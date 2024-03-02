@@ -935,6 +935,8 @@ def evaluate_text(text, sketch_text, next_version=False):
                 value = param.unit
             elif member == 'inchfrac':
                 value = paramformatter.mixed_frac_inch(param, design)
+            elif member == 'inchfracwounit':
+                value = paramformatter.mixed_frac_inch(param, design, False)                
             else:
                 return f'<Unknown member of {var_name}: {member}>'
 
